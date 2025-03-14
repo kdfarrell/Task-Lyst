@@ -1,10 +1,19 @@
-:root {
-    --background: #101114;
-    --primary-color: #1C1D20;
-    --secondary-color: #4A4D57;
-    --accent-color: #00FFC4;
-    --text-color: #F9F9F9;
+:root { 
+    --background: #0D0D0D; /* Very dark gray (almost black) background */
+    --primary-color: #121212; /* Dark but slightly lighter than background for primary elements */
+    --secondary-color: #333333; /* Medium dark gray for less important UI elements */
+    --accent-color: #FFFFFF; /* Bright white for high contrast accents */
+    --text-color: #F1F1F1; /* Soft white-gray text for readability */
 }
+
+.light-mode {
+    --background: #F5F5F5; /* Light gray background for better contrast */
+    --primary-color: #E0E0E0; /* Light gray for primary elements */
+    --secondary-color: #808080; /* Even darker gray for secondary UI elements */
+    --accent-color: #000000; /* Black for high contrast accents */
+    --text-color: #2C2C2C; /* Dark gray for text to ensure it's legible */
+}
+
 
 * {
     margin: 0;

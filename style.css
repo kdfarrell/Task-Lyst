@@ -1,19 +1,18 @@
 :root { 
-    --background: #0D0D0D; /* Very dark gray (almost black) background */
-    --primary-color: #121212; /* Dark but slightly lighter than background for primary elements */
-    --secondary-color: #333333; /* Medium dark gray for less important UI elements */
-    --accent-color: #FFFFFF; /* Bright white for high contrast accents */
-    --text-color: #F1F1F1; /* Soft white-gray text for readability */
+    --background: #0D0D0D;
+    --primary-color: #121212; 
+    --secondary-color: #333333; 
+    --accent-color: #FFFFFF; 
+    --text-color: #F1F1F1;
 }
 
 .light-mode {
-    --background: #F5F5F5; /* Light gray background for better contrast */
-    --primary-color: #E0E0E0; /* Light gray for primary elements */
-    --secondary-color: #808080; /* Even darker gray for secondary UI elements */
-    --accent-color: #000000; /* Black for high contrast accents */
-    --text-color: #2C2C2C; /* Dark gray for text to ensure it's legible */
+    --background: #F5F5F5; 
+    --primary-color: #E0E0E0; 
+    --secondary-color: #555555; 
+    --accent-color: #000000; 
+    --text-color: #2C2C2C; 
 }
-
 
 * {
     margin: 0;
@@ -25,6 +24,40 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16pt;
     color: var(--text-color);
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+header button {
+    border: none;
+}
+
+#theme-switch svg {
+    fill: var(--primary-color)
+}
+
+#theme-switch svg:first-child {
+    display: none;
+}
+
+.light-mode #theme-switch svg:last-child{
+    display: none;
+}
+
+.light-mode #theme-switch svg:first-child {
+    display: block;
 }
 
 body {
@@ -102,6 +135,7 @@ form {
     padding-right: 0;
     flex-grow: 1;
     transition: 200ms ease;
+    color: var(--text-color);
 }
 
 .delete-btn {

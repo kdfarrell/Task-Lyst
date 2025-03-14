@@ -38,11 +38,10 @@ html {
     position: fixed;
     top: 20px;
     right: 20px;
-}
-
-header button {
     border: none;
 }
+
+
 
 #theme-switch svg {
     fill: var(--primary-color)
@@ -67,7 +66,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.5s ease;
+    transition: all 0.2s linear;
 }
 
 h1 {
@@ -191,6 +190,13 @@ input[type = "checkbox"] {
 
     html {
         font-size: 12pt;
+    }
+
+    #theme-switch {
+        height: 35px;
+        width: 35px;
+        top: 15px;
+        right: 15px;
     }
 
     #add-btn {

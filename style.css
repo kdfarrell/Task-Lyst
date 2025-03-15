@@ -1,17 +1,17 @@
-:root { 
+:root {
     --background: #0D0D0D;
-    --primary-color: #121212; 
-    --secondary-color: #333333; 
-    --accent-color: #FFFFFF; 
+    --primary-color: #121212;
+    --secondary-color: #333333;
+    --accent-color: #FFFFFF;
     --text-color: #F1F1F1;
 }
 
 .light-mode {
-    --background: #F5F5F5; 
-    --primary-color: #E0E0E0; 
-    --secondary-color: #555555; 
-    --accent-color: #000000; 
-    --text-color: #2C2C2C; 
+    --background: #F5F5F5;
+    --primary-color: #E0E0E0;
+    --secondary-color: #555555;
+    --accent-color: #000000;
+    --text-color: #2C2C2C;
 }
 
 * {
@@ -21,45 +21,12 @@
 }
 
 html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16pt;
-    color: var(--text-color);
-}
-
-#theme-switch {
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--accent-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    border: none;
-}
-
-
-
-#theme-switch svg {
-    fill: var(--primary-color)
-}
-
-#theme-switch svg:first-child {
-    display: none;
-}
-
-.light-mode #theme-switch svg:last-child{
-    display: none;
-}
-
-.light-mode #theme-switch svg:first-child {
-    display: block;
+    font-size: 24px;
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
     background-color: var(--background);
     min-height: 100vh;
     padding: 10px;
@@ -70,8 +37,7 @@ body {
 }
 
 h1 {
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin: 100px 0 20px;
     font-size: 3rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -79,7 +45,7 @@ h1 {
     color: var(--accent-color);
 }
 
-.wrapper {
+.container {
     width: 700px;
     max-width: 100%;
     display: flex;
@@ -87,9 +53,45 @@ h1 {
     gap: 10px;
 }
 
+/* Theme Switch Button */
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch svg {
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:first-child {
+    display: none;
+}
+
+.light-mode #theme-switch svg:first-child {
+    display: block;
+}
+
+.light-mode #theme-switch svg:last-child {
+    display: none;
+}
+
+/* To-Do Input */
+form {
+    position: relative;
+}
+
 #todo-input {
-    padding: 12px 20px;
     width: 100%;
+    padding: 12px 20px;
     background: none;
     border: 2px solid var(--secondary-color);
     border-radius: 1000px;
@@ -102,46 +104,43 @@ h1 {
     outline: none;
 }
 
-form {
-    position: relative;
-}
-
 #add-btn {
     position: absolute;
     top: 0;
     right: 0;
-    font: inherit;
-    background-color: var(--accent-color);
     height: 100%;
     padding: 0 30px;
     border: none;
     border-radius: 1000px;
+    font: inherit;
     font-weight: 600;
+    background-color: var(--accent-color);
     color: var(--background);
     cursor: pointer;
 }
 
+/* To-Do Items */
 .todo {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
     padding: 0 16px;
     background-color: var(--primary-color);
     border-radius: 15px;
-    display: flex;
-    align-items: center;
+    margin-bottom: 10px;
 }
 
 .todo .todo-text {
-    padding: 15px;
-    padding-right: 0;
     flex-grow: 1;
-    transition: 200ms ease;
+    padding: 15px 0 15px 15px;
     color: var(--text-color);
+    transition: 200ms ease;
 }
 
+/* Delete Button */
 .delete-btn {
     padding: 3px;
-    background: none;
     border: none;
+    background: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,38 +155,38 @@ form {
     fill: #ff0033;
 }
 
+/* Custom Checkbox */
 .custom-checkbox {
-    border: 2px solid var(--accent-color);
-    border-radius: 50%;
-    min-height: 20px;
-    min-width: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0; 
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
     cursor: pointer;
     transition: 200ms ease;
 }
 
-input[type = "checkbox"]:checked ~ .custom-checkbox {
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
     background-color: var(--accent-color);
 }
 
-input[type = "checkbox"]:checked ~ .custom-checkbox svg{
-    fill: var(--primary-color)
+input[type="checkbox"]:checked ~ .custom-checkbox svg {
+    fill: var(--primary-color);
 }
 
-input[type = "checkbox"]:checked ~ .todo-text {
+input[type="checkbox"]:checked ~ .todo-text {
     text-decoration: line-through;
     color: var(--secondary-color);
 }
 
-input[type = "checkbox"] {
-    display: none;
-}
-
+/* Mobile Styles */
 @media (max-width: 500px) {
-
     html {
         font-size: 12pt;
     }

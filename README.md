@@ -4,7 +4,7 @@
 The Todo List Application is a simple, functional web app designed to manage tasks. Built using HTML, CSS, and JavaScript, this application enables users to add, delete, and mark tasks as completed. It also offers a light mode feature, which can be toggled on or off. Task data is persistently stored in `localStorage`, ensuring that the tasks remain available even after a page reload.  
 
 ## Live Demo  
-🔗 [View Live Demo](https://your-live-site-link)  
+🔗 [View Live Demo](https://kdfarrell.github.io/Task-Lyst/)  
 
 ## Technologies Used  
 - HTML  
